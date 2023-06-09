@@ -18,9 +18,34 @@
     render();
   };
 
+  const doneTask = (taskIndex) => {
+    tasks[taskIndex].done = !tasks[taskIndex].done;
+
+    render();
+  };
+
   const removeTask = (taskIndex) => {
     tasks.splice(taskIndex, 1);
+
     render();
+  };
+
+  const bindEvents = () => {
+    const doneButton = document.querySelectorAll(".js__done");
+
+    doneButton.forEach((doneButton, index) => {
+      doneButton.addEventListener("click", () => {
+        doneTask(index);
+      });
+    });
+
+    const removeButton = document.querySelectorAll(".js__remove");
+
+    removeButton.forEach((removeButton, index) => {
+      removeButton.addEventListener("click", () => {
+        removeTask(index);
+      });
+    });
   };
 
   const render = () => {
@@ -30,8 +55,9 @@
       htmlString += `
         <li
         ${task.done ? ' style="text-decoration: line-through"' : ""}
-        > 
-        <button class="js__remove" >usuń</button>
+        >
+        <button class="js__done">zrobione?</button> 
+        <button class="js__remove">usuń</button>
         ${task.content}
         </li>
       `;
@@ -39,11 +65,7 @@
 
     document.querySelector(".js__tasks").innerHTML = htmlString;
 
-    const removeButton = document.querySelectorAll(".js__remove");
-
-    removeButton.forEach((removeButton, index) => {
-      removeButton.addEventListener("click", removeTask);
-    });
+    bindEvents();
   };
 
   const onFormSubmit = (event) => {
