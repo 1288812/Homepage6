@@ -1,0 +1,105 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+::after,
+::before {
+    box-sizing: inherit;
+}
+
+.js__list {
+    display: flex;
+    margin: 8px 0 8px 0;
+    text-align: justify;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid 1px rgb(230, 227, 227);
+    padding: 0 5px 0 5px;
+}
+
+.js__listItem {
+    margin: 10px;
+}
+
+.js__listItem--done {
+    text-decoration: line-through solid 2px rgb(0, 87, 14);
+}
+
+.js__mark {
+    height: 30px;
+    width: 30px;
+    background-color: green;
+    border: none;
+    color: white;
+}
+
+.js__remove {
+    height: 30px;
+    width: 30px;
+    background-color: red;
+    border: none;
+    color: white;
+}
+
+.body {
+    background-color: rgb(230, 227, 227);
+    margin: 20px;
+}
+
+.main {
+    max-width: 800px;
+    min-width: 250px;
+    margin: 100px auto;
+}
+
+.main__section {
+    width: 100%;
+}
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 12px 20px 12px 20px;
+    background-color: white;
+}
+
+.form__label {
+    flex-basis: 600px;
+    margin: 5px 5px 5px 5px;
+
+}
+
+.form__input {
+    width: 100%;
+    border: solid 1px rgb(209, 208, 208);
+    height: 30px;
+}
+
+.form__button {
+    background-color: rgb(38, 160, 168);
+    height: 30px;
+    flex-grow: 1;
+    margin: 5px 5px 5px 5px;
+    max-width: 600px;
+    border: none;
+    color: white;
+}
+
+.form__input {
+    max-width: 100%;
+}
+
+.section__subhead {
+    padding: 12px 20px 12px 20px;
+    background-color: white;
+    margin: 5px 0 2px 0;
+}
+
+.section__list {
+    padding: 10px 20px 20px 20px;
+    background-color: white;
+    min-height: 50px;
+    margin: auto;
+    max-width: 100%;
+}

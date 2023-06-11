@@ -1,14 +1,5 @@
 {
-  const tasks = [
-    {
-      content: "test-",
-      done: false,
-    },
-    {
-      content: "test+",
-      done: true,
-    },
-  ];
+  const tasks = [];
 
   const addNewTask = (newTaskContent) => {
     tasks.push({
@@ -31,7 +22,7 @@
   };
 
   const bindEvents = () => {
-    const doneButton = document.querySelectorAll(".js__done");
+    const doneButton = document.querySelectorAll(".js__mark");
 
     doneButton.forEach((doneButton, index) => {
       doneButton.addEventListener("click", () => {
@@ -53,12 +44,10 @@
 
     for (const task of tasks) {
       htmlString += `
-        <li
-        ${task.done ? ' style="text-decoration: line-through"' : ""}
-        >
-        <button class="js__done">zrobione?</button> 
-        <button class="js__remove">usuń</button>
-        ${task.content}
+        <li class="js__list">
+        <button class="js__mark js__mark--done">${task.done ? "✓" : ""}</button> 
+        <span class="js__listItem ${task.done ? "js__listItem--done" : ""}"> ${task.content} </span>
+        <button class="js__remove">🗑</button>
         </li>
       `;
     }
@@ -71,13 +60,16 @@
   const onFormSubmit = (event) => {
     event.preventDefault();
 
-    const newTaskContent = document.querySelector(".js__newTask").value.trim();
+    const newTask = document.querySelector(".js__newTask");
+    const newTaskContent = newTask.value.trim();
+    newTask.focus();
 
     if (newTaskContent === "") {
       return;
     }
 
     addNewTask(newTaskContent);
+    newTask.value = "";
   };
 
   const init = () => {
