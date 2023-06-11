@@ -1,0 +1,36 @@
+.js__list {
+    display: flex;
+    margin: 8px 0 8px 0;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid 1px rgb(230, 227, 227);
+    padding: 0 5px 0 5px;
+}
+
+.js__listItem {
+    margin: 10px;
+    flex: auto;
+    font-size: 14px;
+}
+
+.js__listItem--done {
+    text-decoration: line-through solid 2px rgb(0, 87, 14);
+}
+
+.js__mark {
+    height: 30px;
+    width: 30px;
+    background-color: green;
+    border: none;
+    color: white;
+    flex-shrink: 0;
+}
+
+.js__remove {
+    height: 30px;
+    width: 30px;
+    background-color: red;
+    border: none;
+    color: white;
+    flex-shrink: 0;
+}

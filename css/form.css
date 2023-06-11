@@ -1,0 +1,32 @@
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 12px 20px 12px 20px;
+    background-color: white;
+}
+
+.form__label {
+    flex-basis: 600px;
+    margin: 5px 5px 5px 5px;
+
+}
+
+.form__input {
+    width: 100%;
+    border: solid 1px rgb(209, 208, 208);
+    height: 30px;
+}
+
+.form__button {
+    background-color: rgb(38, 160, 168);
+    height: 30px;
+    flex-grow: 1;
+    margin: 5px 5px 5px 5px;
+    max-width: 600px;
+    border: none;
+    color: white;
+}
+
+.form__input {
+    max-width: 100%;
+}
