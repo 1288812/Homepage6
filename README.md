@@ -10,7 +10,9 @@ A to-do list is a small notebook in which you can write down planned tasks, mark
 - HTML 
 - CSS 
 - JavaScript 
+
 BEM convention
+
 (including "ECMAScript 6" features)
 
 
