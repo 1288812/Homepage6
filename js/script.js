@@ -9,11 +9,11 @@
     render();
   };
 
-  const doneTask = (taskIndex) => {
+  function toggleDoneTask(taskIndex) {
     tasks[taskIndex].done = !tasks[taskIndex].done;
 
     render();
-  };
+  }
 
   const removeTask = (taskIndex) => {
     tasks.splice(taskIndex, 1);
@@ -26,7 +26,7 @@
 
     doneButton.forEach((doneButton, index) => {
       doneButton.addEventListener("click", () => {
-        doneTask(index);
+        toggleDoneTask(index);
       });
     });
 
@@ -45,8 +45,10 @@
     for (const task of tasks) {
       htmlString += `
         <li class="js__list">
-        <button class="js__mark js__mark--done">${task.done ? "✓" : ""}</button> 
-        <span class="js__listItem ${task.done ? "js__listItem--done" : ""}"> ${task.content} </span>
+        <button class="js__mark js__mark--done">${task.done ? "✓" : ""}
+        </button> 
+        <span class="js__listItem ${task.done ? "js__listItem--done" : ""}"> ${task.content} 
+        </span>
         <button class="js__remove">🗑</button>
         </li>
       `;

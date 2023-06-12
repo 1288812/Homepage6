@@ -1,32 +1,41 @@
 .form {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 12px 20px 12px 20px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
     background-color: white;
+    padding: 12px 20px 12px 20px;
+    align-items: center;
+}
+
+@media (max-width: 767px) {
+    .form {
+        grid-template-columns: 1fr;
+    }
+
 }
 
 .form__label {
-    flex-basis: 600px;
-    margin: 5px 5px 5px 5px;
-
+    flex-basis: 100%;
 }
 
 .form__input {
     width: 100%;
     border: solid 1px rgb(209, 208, 208);
-    height: 30px;
+    padding: 10px;
 }
 
 .form__button {
-    background-color: rgb(38, 160, 168);
-    height: 30px;
-    flex-grow: 1;
-    margin: 5px 5px 5px 5px;
-    max-width: 600px;
+    background-color: teal;
     border: none;
     color: white;
+    flex-basis: 100%;
+    padding: 10px;
 }
 
-.form__input {
-    max-width: 100%;
+.form__button:hover {
+    background-color: rgb(2, 196, 196);
+}
+
+.form__button:active {
+    background-color: rgb(88, 255, 255);
 }

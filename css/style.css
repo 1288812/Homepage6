@@ -19,21 +19,3 @@ html {
     min-width: 250px;
     margin: 100px auto;
 }
-
-.main__section {
-    width: 100%;
-}
-
-.section__subhead {
-    padding: 12px 20px 12px 20px;
-    background-color: white;
-    margin: 5px 0 2px 0;
-}
-
-.section__list {
-    padding: 10px 20px 20px 20px;
-    background-color: white;
-    min-height: 50px;
-    margin: auto;
-    max-width: 100%;
-}

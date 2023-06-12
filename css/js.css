@@ -1,15 +1,14 @@
 .js__list {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-gap: 10px;
     margin: 8px 0 8px 0;
-    justify-content: space-between;
     align-items: center;
     border-bottom: solid 1px rgb(230, 227, 227);
-    padding: 0 5px 0 5px;
 }
 
 .js__listItem {
     margin: 10px;
-    flex: auto;
     font-size: 14px;
 }
 
@@ -23,7 +22,14 @@
     background-color: green;
     border: none;
     color: white;
-    flex-shrink: 0;
+}
+
+.js__mark:hover {
+    background-color: rgb(0, 163, 0);
+}
+
+.js__mark:active {
+    background-color: rgb(8, 245, 8);
 }
 
 .js__remove {
@@ -32,5 +38,12 @@
     background-color: red;
     border: none;
     color: white;
-    flex-shrink: 0;
+}
+
+.js__remove:hover {
+    background-color: rgb(252, 103, 103);
+}
+
+.js__remove:active {
+    background-color: rgb(250, 151, 151);
 }
