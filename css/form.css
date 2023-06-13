@@ -30,12 +30,15 @@
     color: white;
     flex-basis: 100%;
     padding: 10px;
+    transition: 0.5s;
 }
 
 .form__button:hover {
     background-color: rgb(2, 196, 196);
+    transform: scale(1.2);
 }
 
 .form__button:active {
     background-color: rgb(88, 255, 255);
+    transform: scale(1);
 }
