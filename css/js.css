@@ -10,6 +10,7 @@
 .js__listItem {
     margin: 10px;
     font-size: 14px;
+    word-break: break-all;
 }
 
 .js__listItem--done {
@@ -23,6 +24,7 @@
     border: none;
     color: white;
     transition: 0.5s;
+    cursor: pointer;
 }
 
 .js__mark:hover {
@@ -41,6 +43,7 @@
     border: none;
     color: white;
     transition: 0.5s;
+    cursor: pointer;
 }
 
 .js__remove:hover {
