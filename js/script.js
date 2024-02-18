@@ -1,23 +1,38 @@
 {
-  const tasks = [];
+  let tasks = [];
+  let hideDoneTasks = false;
 
-  const addNewTask = (newTaskContent) => {
-    tasks.push({
-      content: newTaskContent,
-    });
-
+  const removeTask = (taskIndex) => {
+    tasks = tasks.filter((_, index) => index !== taskIndex);
     render();
   };
 
-  function toggleDoneTask(taskIndex) {
-    tasks[taskIndex].done = !tasks[taskIndex].done;
-
+  function toggleDoneTasks(taskIndex) {
+    tasks = [
+      ...tasks.slice(0, taskIndex),
+      {
+        ...tasks[taskIndex],
+        done: !tasks[taskIndex].done,
+      },
+      ...tasks.slice(taskIndex + 1),
+    ];
     render();
   }
 
-  const removeTask = (taskIndex) => {
-    tasks.splice(taskIndex, 1);
+  const addNewTask = (newTaskContent) => {
+    tasks = [...tasks, { content: newTaskContent }];
+    render();
+  };
 
+  const markAllTaskDone = () => {
+    tasks = tasks.map((task) => ({
+      ...task,
+      done: true,
+    }));
+  };
+
+  const toggleHideDoneTask = () => {
+    hideDoneTasks = !hideDoneTasks;
     render();
   };
 
@@ -26,7 +41,7 @@
 
     doneButton.forEach((doneButton, index) => {
       doneButton.addEventListener("click", () => {
-        toggleDoneTask(index);
+        toggleDoneTasks(index);
       });
     });
 
@@ -38,25 +53,26 @@
       });
     });
   };
+  const renderTasks = () => {
+    const taskToHTML = (task) => `
+    <li class="js__list">
+      <button class="js__mark ${task.done ? "js__mark--done" : ""}">${task.done ? "✓" : ""}</button> 
+      <span class="js__listItem ${task.done ? "js__listItem--done" : ""}">${task.content}</span>
+      <button class="js__remove">🗑</button>
+    </li>
+  `;
+
+    const tasksElement = document.querySelector(".js__list");
+    tasksElement.innerHTML = tasks.map(taskToHTML).join("");
+  };
+  const renderButtons = () => {};
+  const bindButtonsEvents = () => {};
 
   const render = () => {
-    let htmlString = "";
-
-    for (const task of tasks) {
-      htmlString += `
-        <li class="js__list">
-        <button class="js__mark js__mark--done">${task.done ? "✓" : ""}
-        </button> 
-        <span class="js__listItem ${task.done ? "js__listItem--done" : ""}"> ${task.content} 
-        </span>
-        <button class="js__remove">🗑</button>
-        </li>
-      `;
-    }
-
-    document.querySelector(".js__tasks").innerHTML = htmlString;
-
+    renderTasks();
+    renderButtons();
     bindEvents();
+    bindButtonsEvents();
   };
 
   const onFormSubmit = (event) => {

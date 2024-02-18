@@ -3,15 +3,26 @@
 }
 
 .section__subhead {
-    padding: 12px 20px 12px 20px;
+    padding: 10px 20px 10px 20px;
     background-color: white;
-    margin: 5px 0 2px 0;
+    margin: 6px 0;
 }
 
-.section__list {
-    padding: 10px 20px 20px 20px;
+.section__subheadList {
+    padding: 0px 20px 0px 20px;
     background-color: white;
-    min-height: 50px;
-    margin: auto;
-    max-width: 100%;
+
+}
+
+.section__header {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    align-items: center;
+    margin: 4px 0;
+    background-color: white;
+}
+
+.section__button {
+    background-color: white;
+    border: none;
 }
